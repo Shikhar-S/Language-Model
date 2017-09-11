@@ -10,11 +10,20 @@ vocab_size=0
 vocab_to_idx=dict()
 idx_to_vocab=list()
 def get_encoding(f):
-    with open(f,'r') as F:
-        for line in F:
-            
+	switch=False
+	i=0
+	with open(f,'r') as F:
+	    for line in F:
+	    	line=line[1:len(line)-1]
+	    	line=line.split(',')
+	    	for x in line:
+	    		print x
 
 
+get_encoding(f)         
+
+
+'''
 with open('format_allines.txt','r') as F:
 	raw_data=F.read()
 	data=[vocab_to_idx[c.lower()] for c in raw_data]
@@ -105,4 +114,6 @@ def generate_characters(Graph,restoration_path=None,start='a',text_length=100,pi
 g=build_graph(state_size=100,batch_size=1,num_steps=1)
 txt=generate_characters(g,text_length=3500)
 print("".join(txt))
+'''
+
 

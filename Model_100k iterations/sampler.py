@@ -4,33 +4,14 @@ import time
 import numpy as np
 
 
-f='code.txt'
-vocab=set()
-vocab_size=0
-vocab_to_idx=dict()
-idx_to_vocab=list()
-def get_encoding(f):
-	switch=False
-	i=0
-	with open(f,'r') as F:
-	    for line in F:
-	    	line=line[1:len(line)-1]
-	    	line=line.split(',')
-	    	for x in line:
-	    		print x
 
 
-get_encoding(f)         
 
+vocab_to_idx={'m': 0, ':': 1, '?': 2, '0': 3, 'n': 4, '3': 5, '\n': 6, '-': 7, 'b': 8, '5': 9, 'd': 10, 'u': 11, 'c': 12, '\t': 13, 'o': 14, 'i': 15, 'k': 16, '!': 17, '.': 18, 'g': 19, '2': 20, '8': 21, '"': 22, 'f': 23, 'e': 24, '$': 25, 's': 26, '6': 27, ',': 28, '(': 29, 't': 30, 'w': 31, 'l': 32, 'h': 33, 'z': 34, '7': 35, 'a': 36, "'": 37, 'q': 38, '1': 39, 'v': 40, ']': 41, 'y': 42, 'j': 43, '9': 44, ' ': 45, ')': 46, '[': 47, 'r': 48, '4': 49, 'p': 50, 'x': 51};
+idx_to_vocab={0: 'm', 1: ':', 2: '?', 3: '0', 4: 'n', 5: '3', 6: '\n', 7: '-', 8: 'b', 9: '5', 10: 'd', 11: 'u', 12: 'c', 13: '\t', 14: 'o', 15: 'i', 16: 'k', 17: '!', 18: '.', 19: 'g', 20: '2', 21: '8', 22: '"', 23: 'f', 24: 'e', 25: '$', 26: 's', 27: '6', 28: ',', 29: '(', 30: 't', 31: 'w', 32: 'l', 33: 'h', 34: 'z', 35: '7', 36: 'a', 37: "'", 38: 'q', 39: '1', 40: 'v', 41: ']', 42: 'y', 43: 'j', 44: '9', 45: ' ', 46: ')', 47: '[', 48: 'r', 49: '4', 50: 'p', 51: 'x'};
+        
+vocab_size=len(vocab_to_idx)
 
-'''
-with open('format_allines.txt','r') as F:
-	raw_data=F.read()
-	data=[vocab_to_idx[c.lower()] for c in raw_data]
-
-print(vocab_size)
-print(len(data))
-del raw_data
 
 
 def reset_graph():
@@ -112,8 +93,8 @@ def generate_characters(Graph,restoration_path=None,start='a',text_length=100,pi
 
 
 g=build_graph(state_size=100,batch_size=1,num_steps=1)
-txt=generate_characters(g,text_length=3500)
+txt=generate_characters(g,text_length=5000)
 print("".join(txt))
-'''
+
 
 
